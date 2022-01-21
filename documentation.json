@@ -1,0 +1,15 @@
+{
+  "GUI Usage": "To run a command, use the following syntax: `command_name parameter1 parameter2...",
+  "help": "Shows this help message",
+  "stop": "Exits the program",
+  "config": "Gets or sets a value from config.json. Usage: config get/set key1 key2... \"newVal(if set)\"",
+  "connect": "Connects to a server. Usage: connect SERVER_IP SERVER_PORT",
+  "makeAccount": "Makes an account. Usage: makeAccount USERNAME PASSWORD",
+  "login": "Logs into an account. Usage: login USERNAME:USER_ID PASSWORD,",
+  "logout": "Logs out of an account. Usage: logout",
+  "makeGroup": "Makes a group on the server. Usage: makeGroup GROUP_NAME",
+  "addUserToGroup": "Adds a user to a group. Usage: addUserToGroup USERID GROUPID",
+  "switchGroup": "Switches to a different group. Usage: switchGroup GROUPID",
+  "leaveGroup": "Leaves a group which the user is in. Usage: leaveGroup GROUPID",
+  "getGroups": "Lists all groups which you are in. Usage: getGroups"
+}
