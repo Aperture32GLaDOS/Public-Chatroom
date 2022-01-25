@@ -51,7 +51,12 @@ def setConfig(config, keys,
               newValue):  # Given a dictionary, an array of keys and a value, change what the value of the nested
     # keys are. Equivalent to something like config[key1][key2][key3]... = newVal
     if len(keys) > 1:
-        return setConfig(config[keys[0]], keys[1:], newValue)
+        try:
+            config[keys[0]] = setConfig(config[keys[0]], keys[1:], newValue)
+        except KeyError:  # If part of the key isn't assigned,
+            config[keys[0]] = {}  # Assign it a blank dictionary
+            setConfig(config[keys[0]], keys[1:], newValue)  # And continue
+        return config
     else:
         config[keys[0]] = newValue
         return config
@@ -219,7 +224,7 @@ class Config(Command):
         elif self.type == "set":
             config = setConfig(config, self.index, self.newVal)
             configFile = open("config.json", "w")
-            json.dump(config, configFile)
+            json.dump(config, configFile, indent=4)
             configFile.close()
 
 
