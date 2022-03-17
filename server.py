@@ -126,7 +126,7 @@ def handleEvents(storageMethod):  # A function to handle the events which come i
 pubKey = encryption.readRSAKeyFromFile("pubKey.rsa")
 privKey = encryption.readRSAKeyFromFile("privKey.rsa")
 servSocket = socket.socket()
-servSocket.bind(("127.0.0.1", PORT))
+servSocket.bind(("0.0.0.0", PORT))
 servSocket.listen()
 handlingThread = threading.Thread(target=handleEvents, daemon=True, args=(storageMethod, ))
 handlingThread.start()
